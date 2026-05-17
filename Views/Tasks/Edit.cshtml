@@ -1,0 +1,73 @@
+@model mvc_project.Models.TaskItem
+@{
+    ViewData["Title"] = "Edit Task";
+}
+
+<div class="form-page">
+    <div class="form-card">
+        <div class="form-card-header">
+            <h1>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                </svg>
+                Edit Task
+            </h1>
+            <p>Update the task details below</p>
+        </div>
+
+        <form asp-action="Edit" method="post" id="editTaskForm" novalidate>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CreatedBy" />
+            <input type="hidden" asp-for="CreatedAt" />
+            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+            <div class="form-group">
+                <label asp-for="Title" class="form-label">Task Title *</label>
+                <input asp-for="Title" class="form-input" id="taskTitle" />
+                <span asp-validation-for="Title" class="field-validation"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="form-label">Description *</label>
+                <textarea asp-for="Description" class="form-input form-textarea" rows="4" id="taskDescription"></textarea>
+                <span asp-validation-for="Description" class="field-validation"></span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="Priority" class="form-label">Priority</label>
+                    <select asp-for="Priority" class="form-input" id="taskPriority">
+                        <option value="Low">🟢 Low</option>
+                        <option value="Medium">🟡 Medium</option>
+                        <option value="High">🔴 High</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Status" class="form-label">Status</label>
+                    <select asp-for="Status" class="form-input" id="taskStatus">
+                        <option value="Pending">Pending</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Done">Done</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                    </svg>
+                    Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+    <script src="~/js/validation.js"></script>
+}
