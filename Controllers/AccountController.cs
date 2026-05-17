@@ -8,6 +8,13 @@ namespace mvc_project.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly ApplicationDbContext _context;
+
+        public AccountController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         // GET: /Account/Login
         public IActionResult Login()
         {
@@ -25,8 +32,8 @@ namespace mvc_project.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var user = DataStore.Users.FirstOrDefault(u =>
-                u.Username.Equals(model.Username, StringComparison.OrdinalIgnoreCase) &&
+            var user = _context.Users.FirstOrDefault(u =>
+                u.Username == model.Username &&
                 u.Password == model.Password);
 
             if (user == null)
@@ -68,7 +75,7 @@ namespace mvc_project.Controllers
                 return View(model);
 
             // Check if username already exists
-            if (DataStore.Users.Any(u => u.Username.Equals(model.Username, StringComparison.OrdinalIgnoreCase)))
+            if (_context.Users.Any(u => u.Username == model.Username))
             {
                 ModelState.AddModelError("Username", "Username is already taken");
                 return View(model);
@@ -77,13 +84,13 @@ namespace mvc_project.Controllers
             // Create new user with "User" role
             var newUser = new AppUser
             {
-                Id = DataStore.GetNextUserId(),
                 Username = model.Username,
                 Password = model.Password,
                 Role = "User"
             };
 
-            DataStore.Users.Add(newUser);
+            _context.Users.Add(newUser);
+            await _context.SaveChangesAsync();
 
             // Auto-login after registration
             var claims = new List<Claim>

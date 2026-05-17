@@ -16,10 +16,10 @@
     --accent-yellow: #ffc048;
     --accent-red: #ff6b6b;
     --accent-blue: #54a0ff;
-    --radius: 12px;
-    --radius-sm: 8px;
-    --shadow: 0 4px 24px rgba(0,0,0,0.3);
-    --transition: 0.2s ease;
+    --radius: 4px;
+    --radius-sm: 4px;
+    --shadow: none;
+    --transition: 0.1s ease;
 }
 
 html { font-size: 16px; scroll-behavior: smooth; }
@@ -38,8 +38,7 @@ a:hover { color: var(--primary-hover); }
 
 /* ========== NAVBAR ========== */
 .navbar {
-    background: rgba(15, 17, 23, 0.85);
-    backdrop-filter: blur(16px);
+    background: var(--bg-card);
     border-bottom: 1px solid var(--border);
     padding: 0 2rem;
     height: 64px;
@@ -121,13 +120,10 @@ a:hover { color: var(--primary-hover); }
 .btn-primary {
     background: var(--primary);
     color: #fff;
-    box-shadow: 0 2px 12px var(--primary-glow);
 }
 .btn-primary:hover {
     background: var(--primary-hover);
     color: #fff !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px var(--primary-glow);
 }
 .btn-secondary {
     background: var(--bg-card);
@@ -168,10 +164,9 @@ a:hover { color: var(--primary-hover); }
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 2.5rem;
+    padding: 2rem;
     width: 100%;
     max-width: 440px;
-    box-shadow: var(--shadow);
 }
 .auth-header { text-align: center; margin-bottom: 2rem; }
 .auth-icon {
@@ -248,7 +243,6 @@ select.form-input { cursor: pointer; }
     padding: 2rem;
     width: 100%;
     max-width: 600px;
-    box-shadow: var(--shadow);
 }
 .form-card-header { margin-bottom: 1.5rem; }
 .form-card-header h1 { display: flex; align-items: center; gap: 10px; font-size: 1.3rem; }
@@ -286,8 +280,8 @@ select.form-input { cursor: pointer; }
 
 /* ========== DASHBOARD ========== */
 .dashboard-welcome {
-    background: linear-gradient(135deg, rgba(108,92,231,.15), rgba(84,160,255,.1));
-    border: 1px solid rgba(108,92,231,.25);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 2rem;
     margin-bottom: 2rem;
@@ -309,7 +303,7 @@ select.form-input { cursor: pointer; }
     gap: 1rem;
     transition: all var(--transition);
 }
-.stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.stat-card:hover { background: var(--bg-card-hover); }
 .stat-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
 .stat-total .stat-icon { background: rgba(108,92,231,.15); color: var(--primary); }
 .stat-pending .stat-icon { background: rgba(255,192,72,.15); color: var(--accent-yellow); }
@@ -334,7 +328,7 @@ select.form-input { cursor: pointer; }
     transition: all var(--transition);
     font-weight: 500;
 }
-.action-card:hover { background: var(--bg-card-hover); color: var(--primary) !important; transform: translateY(-2px); border-color: var(--primary); }
+.action-card:hover { background: var(--bg-card-hover); color: var(--primary) !important; border-color: var(--primary); }
 .action-card svg { color: var(--primary); }
 
 /* ========== TASKS PAGE ========== */

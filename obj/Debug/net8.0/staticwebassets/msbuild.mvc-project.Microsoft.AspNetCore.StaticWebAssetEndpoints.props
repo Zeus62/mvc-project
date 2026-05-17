@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/mvc-project/css/site.4arnmb21pn.css">
+    <StaticWebAssetEndpoint Include="_content/mvc-project/css/site.5cd14ev9b1.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4arnmb21pn"},{"Name":"integrity","Value":"sha256-3CtLFjqqCn9cDw6QcW6E5A1OTnqY0EQ\u002B2O4Tnih6fwM="},{"Name":"label","Value":"_content/mvc-project/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"16186"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00223CtLFjqqCn9cDw6QcW6E5A1OTnqY0EQ\u002B2O4Tnih6fwM=\u0022"},{"Name":"Last-Modified","Value":"Sun, 17 May 2026 04:51:56 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5cd14ev9b1"},{"Name":"integrity","Value":"sha256-O1qxUdWBrh75sS9e5jmoxFbwOh8Xt8GfVndCOnPn\u002Bok="},{"Name":"label","Value":"_content/mvc-project/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"15819"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022O1qxUdWBrh75sS9e5jmoxFbwOh8Xt8GfVndCOnPn\u002Bok=\u0022"},{"Name":"Last-Modified","Value":"Sun, 17 May 2026 22:25:17 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/mvc-project/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-3CtLFjqqCn9cDw6QcW6E5A1OTnqY0EQ\u002B2O4Tnih6fwM="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"16186"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00223CtLFjqqCn9cDw6QcW6E5A1OTnqY0EQ\u002B2O4Tnih6fwM=\u0022"},{"Name":"Last-Modified","Value":"Sun, 17 May 2026 04:51:56 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-O1qxUdWBrh75sS9e5jmoxFbwOh8Xt8GfVndCOnPn\u002Bok="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"15819"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022O1qxUdWBrh75sS9e5jmoxFbwOh8Xt8GfVndCOnPn\u002Bok=\u0022"},{"Name":"Last-Modified","Value":"Sun, 17 May 2026 22:25:17 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/mvc-project/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>

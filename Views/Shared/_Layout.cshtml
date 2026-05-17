@@ -11,48 +11,31 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a class="nav-brand" asp-controller="Home" asp-action="Index">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
-                    <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0M7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/>
-                </svg>
+    <nav class="navbar" style="border-bottom: 1px solid #ddd; padding: 1rem;">
+        <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a class="nav-brand" asp-controller="Home" asp-action="Index" style="font-weight: bold; font-size: 1.2rem; text-decoration: none; color: #333;">
                 TaskBoard
             </a>
-            <div class="nav-links">
+            <div class="nav-links" style="display: flex; gap: 1rem; align-items: center;">
                 @if (User.Identity != null && User.Identity.IsAuthenticated)
                 {
-                    <a asp-controller="Home" asp-action="Index" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"/>
-                        </svg>
-                        Home
-                    </a>
-                    <a asp-controller="Tasks" asp-action="Index" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
-                        </svg>
-                        Tasks
-                    </a>
-                    <div class="nav-user">
-                        <span class="nav-username">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4"/>
-                            </svg>
+                    <a asp-controller="Home" asp-action="Index" class="nav-link" style="text-decoration: none; color: #555;">Home</a>
+                    <a asp-controller="Tasks" asp-action="Index" class="nav-link" style="text-decoration: none; color: #555;">Tasks</a>
+                    <div class="nav-user" style="display: flex; gap: 1rem; align-items: center; margin-left: 1rem;">
+                        <span class="nav-username" style="font-weight: 500; color: #333;">
                             @User.Identity?.Name
                             @if (User.IsInRole("Admin"))
                             {
-                                <span class="nav-role-badge">Admin</span>
+                                <span class="nav-role-badge" style="font-size: 0.8rem; background: #eee; padding: 0.2rem 0.5rem; border-radius: 4px;">Admin</span>
                             }
                         </span>
-                        <a asp-controller="Account" asp-action="Logout" class="btn btn-nav-logout">Logout</a>
+                        <a asp-controller="Account" asp-action="Logout" class="btn btn-outline" style="text-decoration: none; padding: 0.3rem 0.6rem; border: 1px solid #ccc; border-radius: 4px; color: #333;">Logout</a>
                     </div>
                 }
                 else
                 {
-                    <a asp-controller="Account" asp-action="Login" class="btn btn-nav-login">Sign In</a>
-                    <a asp-controller="Account" asp-action="Register" class="btn btn-nav-register">Register</a>
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-outline" style="text-decoration: none; padding: 0.3rem 0.6rem; border: 1px solid #ccc; border-radius: 4px; color: #333;">Sign In</a>
+                    <a asp-controller="Account" asp-action="Register" class="btn btn-primary" style="text-decoration: none; padding: 0.3rem 0.6rem; border: 1px solid #007bff; background: #007bff; color: #fff; border-radius: 4px;">Register</a>
                 }
             </div>
         </div>

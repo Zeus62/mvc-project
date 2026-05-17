@@ -7,6 +7,13 @@ namespace mvc_project.Controllers
     [Authorize]
     public class TasksController : Controller
     {
+        private readonly ApplicationDbContext _context;
+
+        public TasksController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         // GET: /Tasks
         public IActionResult Index()
         {
@@ -17,12 +24,12 @@ namespace mvc_project.Controllers
             if (isAdmin)
             {
                 // Admin sees all tasks
-                tasks = DataStore.Tasks.OrderByDescending(t => t.CreatedAt).ToList();
+                tasks = _context.Tasks.OrderByDescending(t => t.CreatedAt).ToList();
             }
             else
             {
                 // Regular user sees only their own tasks
-                tasks = DataStore.Tasks
+                tasks = _context.Tasks
                     .Where(t => t.CreatedBy == username)
                     .OrderByDescending(t => t.CreatedAt)
                     .ToList();
@@ -49,11 +56,11 @@ namespace mvc_project.Controllers
             if (!ModelState.IsValid)
                 return View(task);
 
-            task.Id = DataStore.GetNextTaskId();
             task.CreatedBy = User.Identity?.Name ?? "unknown";
             task.CreatedAt = DateTime.Now;
 
-            DataStore.Tasks.Add(task);
+            _context.Tasks.Add(task);
+            _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -61,7 +68,7 @@ namespace mvc_project.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Edit(int id)
         {
-            var task = DataStore.Tasks.FirstOrDefault(t => t.Id == id);
+            var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
             if (task == null)
                 return NotFound();
 
@@ -79,7 +86,7 @@ namespace mvc_project.Controllers
             if (!ModelState.IsValid)
                 return View(updatedTask);
 
-            var task = DataStore.Tasks.FirstOrDefault(t => t.Id == id);
+            var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
             if (task == null)
                 return NotFound();
 
@@ -87,6 +94,8 @@ namespace mvc_project.Controllers
             task.Description = updatedTask.Description;
             task.Priority = updatedTask.Priority;
             task.Status = updatedTask.Status;
+
+            _context.SaveChanges();
 
             return RedirectToAction("Index");
         }
@@ -97,11 +106,12 @@ namespace mvc_project.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
-            var task = DataStore.Tasks.FirstOrDefault(t => t.Id == id);
+            var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
             if (task == null)
                 return Json(new { success = false, message = "Task not found" });
 
-            DataStore.Tasks.Remove(task);
+            _context.Tasks.Remove(task);
+            _context.SaveChanges();
             return Json(new { success = true, message = "Task deleted successfully" });
         }
     }

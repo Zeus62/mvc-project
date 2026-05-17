@@ -6,101 +6,28 @@
 {
     var username = ViewBag.Username as string;
     var isAdmin = (bool)ViewBag.IsAdmin;
-    var totalTasks = (int)ViewBag.TotalTasks;
-    var pendingTasks = (int)ViewBag.PendingTasks;
-    var completedTasks = (int)ViewBag.CompletedTasks;
-    var inProgressTasks = (int)ViewBag.InProgressTasks;
 
     <div class="dashboard">
-        <div class="dashboard-welcome">
-            <div class="welcome-text">
-                <h1>Welcome back, <span class="highlight">@username</span>! 👋</h1>
-                <p>
-                    @if (isAdmin)
-                    {
-                        <span class="role-badge role-admin">Admin</span>
-                        <span>You have full access to manage all tasks.</span>
-                    }
-                    else
-                    {
-                        <span class="role-badge role-user">User</span>
-                        <span>You can view and create your own tasks.</span>
-                    }
-                </p>
-            </div>
+        <div class="dashboard-welcome" style="margin-bottom: 2rem;">
+            <h1>Welcome back, @username! 👋</h1>
+            <p>
+                @if (isAdmin)
+                {
+                    <span>Admin Access: You have full access to manage all tasks.</span>
+                }
+                else
+                {
+                    <span>User Access: You can view and create your own tasks.</span>
+                }
+            </p>
         </div>
 
-        <div class="stats-grid">
-            <div class="stat-card stat-total">
-                <div class="stat-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
-                    </svg>
-                </div>
-                <div class="stat-info">
-                    <span class="stat-number">@totalTasks</span>
-                    <span class="stat-label">Total Tasks</span>
-                </div>
-            </div>
-            <div class="stat-card stat-pending">
-                <div class="stat-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
-                    </svg>
-                </div>
-                <div class="stat-info">
-                    <span class="stat-number">@pendingTasks</span>
-                    <span class="stat-label">Pending</span>
-                </div>
-            </div>
-            <div class="stat-card stat-progress">
-                <div class="stat-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.829zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.5.845 1.018 1.018l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.53l-.387 1.163a.217.217 0 0 1-.412 0L3.407 5.53a1.73 1.73 0 0 0-1.018-1.018l-1.163-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
-                    </svg>
-                </div>
-                <div class="stat-info">
-                    <span class="stat-number">@inProgressTasks</span>
-                    <span class="stat-label">In Progress</span>
-                </div>
-            </div>
-            <div class="stat-card stat-done">
-                <div class="stat-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
-                    </svg>
-                </div>
-                <div class="stat-info">
-                    <span class="stat-number">@completedTasks</span>
-                    <span class="stat-label">Completed</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="quick-actions">
-            <h2>Quick Actions</h2>
-            <div class="actions-grid">
-                <a asp-controller="Tasks" asp-action="Index" class="action-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
-                    </svg>
-                    <span>View Tasks</span>
-                </a>
-                <a asp-controller="Tasks" asp-action="Create" class="action-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                    </svg>
-                    <span>New Task</span>
-                </a>
-                <a asp-controller="Account" asp-action="Logout" class="action-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                    </svg>
-                    <span>Logout</span>
-                </a>
+        <div class="quick-actions" style="margin-top: 2rem;">
+            <h3>Quick Actions</h3>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <a asp-controller="Tasks" asp-action="Index" class="btn btn-primary">View Tasks</a>
+                <a asp-controller="Tasks" asp-action="Create" class="btn btn-outline">New Task</a>
+                <a asp-controller="Account" asp-action="Logout" class="btn btn-outline">Logout</a>
             </div>
         </div>
     </div>

@@ -7,10 +7,12 @@ namespace mvc_project.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -23,17 +25,17 @@ namespace mvc_project.Controllers
                 ViewBag.Username = username;
                 ViewBag.IsAdmin = isAdmin;
                 ViewBag.TotalTasks = isAdmin
-                    ? DataStore.Tasks.Count
-                    : DataStore.Tasks.Count(t => t.CreatedBy == username);
+                    ? _context.Tasks.Count()
+                    : _context.Tasks.Count(t => t.CreatedBy == username);
                 ViewBag.PendingTasks = isAdmin
-                    ? DataStore.Tasks.Count(t => t.Status == "Pending")
-                    : DataStore.Tasks.Count(t => t.CreatedBy == username && t.Status == "Pending");
+                    ? _context.Tasks.Count(t => t.Status == "Pending")
+                    : _context.Tasks.Count(t => t.CreatedBy == username && t.Status == "Pending");
                 ViewBag.CompletedTasks = isAdmin
-                    ? DataStore.Tasks.Count(t => t.Status == "Done")
-                    : DataStore.Tasks.Count(t => t.CreatedBy == username && t.Status == "Done");
+                    ? _context.Tasks.Count(t => t.Status == "Done")
+                    : _context.Tasks.Count(t => t.CreatedBy == username && t.Status == "Done");
                 ViewBag.InProgressTasks = isAdmin
-                    ? DataStore.Tasks.Count(t => t.Status == "In Progress")
-                    : DataStore.Tasks.Count(t => t.CreatedBy == username && t.Status == "In Progress");
+                    ? _context.Tasks.Count(t => t.Status == "In Progress")
+                    : _context.Tasks.Count(t => t.CreatedBy == username && t.Status == "In Progress");
             }
 
             return View();
