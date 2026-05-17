@@ -65,12 +65,14 @@ namespace mvc_project.Controllers
         }
 
         // GET: /Tasks/Edit/5
-        [Authorize(Roles = "Admin")]
         public IActionResult Edit(int id)
         {
             var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
             if (task == null)
                 return NotFound();
+
+            if (!User.IsInRole("Admin") && task.CreatedBy != User.Identity?.Name)
+                return Forbid();
 
             return View(task);
         }
@@ -78,7 +80,6 @@ namespace mvc_project.Controllers
         // POST: /Tasks/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
         public IActionResult Edit(int id, TaskItem updatedTask)
         {
             ModelState.Remove("CreatedBy");
@@ -89,6 +90,9 @@ namespace mvc_project.Controllers
             var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
             if (task == null)
                 return NotFound();
+
+            if (!User.IsInRole("Admin") && task.CreatedBy != User.Identity?.Name)
+                return Forbid();
 
             task.Title = updatedTask.Title;
             task.Description = updatedTask.Description;
@@ -103,12 +107,14 @@ namespace mvc_project.Controllers
         // POST: /Tasks/Delete/5  (AJAX endpoint)
         [HttpPost]
         [IgnoreAntiforgeryToken]
-        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
             if (task == null)
                 return Json(new { success = false, message = "Task not found" });
+
+            if (!User.IsInRole("Admin") && task.CreatedBy != User.Identity?.Name)
+                return Json(new { success = false, message = "Unauthorized" });
 
             _context.Tasks.Remove(task);
             _context.SaveChanges();

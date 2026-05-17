@@ -2,20 +2,20 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-    --bg: #0f1117;
-    --bg-card: #1a1d27;
-    --bg-card-hover: #222632;
-    --bg-input: #14161e;
-    --border: #2a2e3a;
-    --text: #e4e6ed;
-    --text-muted: #8b8fa3;
-    --primary: #6c5ce7;
-    --primary-hover: #7e6ff0;
-    --primary-glow: rgba(108, 92, 231, 0.25);
-    --accent-green: #00d2a0;
-    --accent-yellow: #ffc048;
-    --accent-red: #ff6b6b;
-    --accent-blue: #54a0ff;
+    --bg: #f4f7f6;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8f9fa;
+    --bg-input: #ffffff;
+    --border: #e2e8f0;
+    --text: #2d3748;
+    --text-muted: #718096;
+    --primary: #3182ce;
+    --primary-hover: #2b6cb0;
+    --primary-glow: rgba(49, 130, 206, 0.15);
+    --accent-green: #38a169;
+    --accent-yellow: #d69e2e;
+    --accent-red: #e53e3e;
+    --accent-blue: #3182ce;
     --radius: 4px;
     --radius-sm: 4px;
     --shadow: none;

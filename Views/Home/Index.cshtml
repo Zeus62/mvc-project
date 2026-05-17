@@ -8,17 +8,10 @@
     var isAdmin = (bool)ViewBag.IsAdmin;
 
     <div class="dashboard">
-        <div class="dashboard-welcome" style="margin-bottom: 2rem;">
-            <h1>Welcome back, @username! 👋</h1>
-            <p>
-                @if (isAdmin)
-                {
-                    <span>Admin Access: You have full access to manage all tasks.</span>
-                }
-                else
-                {
-                    <span>User Access: You can view and create your own tasks.</span>
-                }
+        <div class="dashboard-welcome" style="margin-bottom: 2rem; background: #eef2f5; border: 1px solid #d1d9e0;">
+            <h1 style="color: #0056b3;">Welcome to your Dashboard, @username! 👋</h1>
+            <p style="color: #555;">
+                Manage your tasks and track your progress efficiently.
             </p>
         </div>
 

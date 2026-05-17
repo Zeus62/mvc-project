@@ -56,7 +56,7 @@
                         </span>
                         <span class="task-date">@task.CreatedAt.ToString("MMM dd, yyyy")</span>
                     </div>
-                    @if (isAdmin)
+                    @if (isAdmin || task.CreatedBy == User.Identity?.Name)
                     {
                         <div class="task-actions">
                             <a asp-action="Edit" asp-route-id="@task.Id" class="btn btn-sm btn-edit">

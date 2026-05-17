@@ -38,4 +38,10 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.Logger.LogInformation("=========================================");
+app.Logger.LogInformation("DEMO ACCOUNTS:");
+app.Logger.LogInformation("Admin: admin / admin123");
+app.Logger.LogInformation("User:  user  / user123");
+app.Logger.LogInformation("=========================================");
+
 app.Run();

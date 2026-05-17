@@ -1,0 +1,42 @@
+@model mvc_project.Models.AppUser
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<div class="form-page">
+    <div class="form-card">
+        <div class="form-card-header">
+            <h1>Edit User: @Model.Username</h1>
+            <p>Update account details or reset the password.</p>
+        </div>
+
+        <form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+            <div class="form-group">
+                <label asp-for="Username" class="form-label">Username</label>
+                <input asp-for="Username" class="form-input" required minlength="3" maxlength="20" />
+                <span asp-validation-for="Username" class="field-validation"></span>
+            </div>
+
+            <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--border);" />
+            <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Reset Password</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Leave blank to keep the current password.</p>
+
+            <div class="form-group">
+                <label for="Password" class="form-label">New Password</label>
+                <!-- Remove ASP-for here to avoid filling the existing password hash into the input -->
+                <input id="Password" name="Password" type="password" class="form-input" placeholder="Leave blank to keep current" minlength="6" />
+            </div>
+
+            <div class="form-actions">
+                <a asp-action="Index" class="btn btn-outline">Cancel</a>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

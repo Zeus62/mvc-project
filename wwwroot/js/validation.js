@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (input.value.trim() === '') {
                 input.classList.remove('input-success');
+                input.classList.add('input-error');
+                const span = document.createElement('span');
+                span.className = 'field-validation js-error';
+                span.textContent = 'This field is required';
+                input.parentElement.appendChild(span);
                 return false;
             }
 
@@ -68,7 +73,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (username && !validateField(username, username.value.length >= 3 && username.value.length <= 20, 'Username must be 3-20 characters')) valid = false;
             if (password && !validateField(password, password.value.length >= 6, 'Password must be at least 6 characters')) valid = false;
             if (confirm && !validateField(confirm, confirm.value === password.value, 'Passwords do not match')) valid = false;
-            if (!valid) e.preventDefault();
+            if (!valid) {
+                e.preventDefault();
+                alert('Please fill in all mandatory fields correctly.');
+            }
         });
     }
 
@@ -85,6 +93,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (input.value.trim() === '') {
                 input.classList.remove('input-success');
+                input.classList.add('input-error');
+                const span = document.createElement('span');
+                span.className = 'field-validation js-error';
+                span.textContent = 'This field is required';
+                input.parentElement.appendChild(span);
                 return false;
             }
 
@@ -117,7 +130,10 @@ document.addEventListener('DOMContentLoaded', function () {
             let valid = true;
             if (title && !validateTaskField(title, title.value.trim().length >= 2, 'Title is required (min 2 characters)')) valid = false;
             if (desc && !validateTaskField(desc, desc.value.trim().length >= 5, 'Description is required (min 5 characters)')) valid = false;
-            if (!valid) e.preventDefault();
+            if (!valid) {
+                e.preventDefault();
+                alert('Please fill in all mandatory fields correctly.');
+            }
         });
     }
 });

@@ -21,6 +21,10 @@
                 {
                     <a asp-controller="Home" asp-action="Index" class="nav-link" style="text-decoration: none; color: #555;">Home</a>
                     <a asp-controller="Tasks" asp-action="Index" class="nav-link" style="text-decoration: none; color: #555;">Tasks</a>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="Users" asp-action="Index" class="nav-link" style="text-decoration: none; color: #0056b3; font-weight: bold;">Manage Users</a>
+                    }
                     <div class="nav-user" style="display: flex; gap: 1rem; align-items: center; margin-left: 1rem;">
                         <span class="nav-username" style="font-weight: 500; color: #333;">
                             @User.Identity?.Name

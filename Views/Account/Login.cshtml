@@ -16,7 +16,7 @@
         </div>
 
         <form asp-action="Login" method="post" id="loginForm" novalidate>
-            <div asp-validation-summary="All" class="validation-summary"></div>
+            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
 
             <div class="form-group">
                 <label asp-for="Username" class="form-label">Username</label>
@@ -40,20 +40,6 @@
 
         <div class="auth-footer">
             <p>Don't have an account? <a asp-controller="Account" asp-action="Register">Create one</a></p>
-        </div>
-
-        <div class="demo-accounts">
-            <p class="demo-title">Demo Accounts</p>
-            <div class="demo-grid">
-                <div class="demo-item">
-                    <span class="demo-role admin">Admin</span>
-                    <span>admin / admin123</span>
-                </div>
-                <div class="demo-item">
-                    <span class="demo-role user">User</span>
-                    <span>user / user123</span>
-                </div>
-            </div>
         </div>
     </div>
 </div>
