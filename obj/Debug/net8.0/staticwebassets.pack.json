@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/mvc-project.bundle.scp.css"
     },
     {
+      "Id": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/wwwroot/css/dark.css",
+      "PackagePath": "staticwebassets/css/dark.css"
+    },
+    {
       "Id": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/wwwroot/js/tasks.js",
       "PackagePath": "staticwebassets/js/tasks.js"
+    },
+    {
+      "Id": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/wwwroot/js/theme.js",
+      "PackagePath": "staticwebassets/js/theme.js"
     },
     {
       "Id": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/wwwroot/js/validation.js",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/t69hnQuRjLmwIrNT8Tn6y8K1LONb0D28EWj9mCcrt8=",
+  "Hash": "oYDXxl7Uf9qjz9nCkcbiW03vxNvx6aFibDot15KratE=",
   "Source": "mvc-project",
   "BasePath": "_content/mvc-project",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/obj/Debug/net8.0/scopedcss/projectbundle/mvc-project.bundle.scp.css"
+    },
+    {
+      "Identity": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/wwwroot/css/dark.css",
+      "SourceId": "mvc-project",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/wwwroot/",
+      "BasePath": "_content/mvc-project",
+      "RelativePath": "css/dark.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/dark.css"
     },
     {
       "Identity": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/wwwroot/css/site.css",
@@ -129,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/tasks.js"
+    },
+    {
+      "Identity": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/wwwroot/js/theme.js",
+      "SourceId": "mvc-project",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/wwwroot/",
+      "BasePath": "_content/mvc-project",
+      "RelativePath": "js/theme.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/theme.js"
     },
     {
       "Identity": "/home/abdulrahman/frontEnd/flaskWork/mvc-project/wwwroot/js/validation.js",

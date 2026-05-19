@@ -2,8 +2,8 @@
 
 /* Apply dark theme when body has dark-mode class */
 body.dark-mode {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
 }
 
 /* Navbar dark theme */
@@ -13,6 +13,24 @@ body.dark-mode {
 }
 
 .dark-mode .nav-brand {
+    color: #fff !important;
+}
+
+/* Override inline styles for navbar text */
+.dark-mode .navbar,
+.dark-mode [style*="border-bottom"] {
+    border-bottom-color: #444 !important;
+}
+
+.dark-mode a[style*="color: #333"],
+.dark-mode a[style*="color: #555"],
+.dark-mode a[style*="color: #0056b3"],
+.dark-mode span[style*="color: #333"] {
+    color: #e0e0e0 !important;
+}
+
+.dark-mode a[style*="color: #333"]:hover,
+.dark-mode a[style*="color: #555"]:hover {
     color: #fff !important;
 }
 
@@ -271,5 +289,72 @@ body.dark-mode {
 }
 
 .dark-mode .stat-card p {
+    color: #b0b0b0 !important;
+}
+
+/* Override ALL inline text colors in dark mode */
+.dark-mode * {
+    color: #e0e0e0 !important;
+}
+
+/* Preserve specific link and button colors */
+.dark-mode a {
+    color: #4da8ff !important;
+}
+
+.dark-mode a:hover {
+    color: #7fbfff !important;
+}
+
+.dark-mode .nav-brand {
+    color: #fff !important;
+}
+
+.dark-mode .nav-link {
+    color: #b0b0b0 !important;
+}
+
+.dark-mode .nav-link:hover {
+    color: #fff !important;
+}
+
+.dark-mode .btn-primary {
+    color: #fff !important;
+}
+
+.dark-mode .btn-outline {
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .btn {
+    color: #fff !important;
+}
+
+/* Preserve form label and required text colors */
+.dark-mode label,
+.dark-mode .form-label {
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .text-danger {
+    color: #ff6b6b !important;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
+    color: #e0e0e0 !important;
+}
+
+.dark-mode p {
+    color: #b0b0b0 !important;
+}
+
+/* Footer dark theme */
+.dark-mode .footer {
+    background-color: #2d2d2d !important;
+    border-top: 1px solid #444 !important;
+    color: #b0b0b0 !important;
+}
+
+.dark-mode .footer-content {
     color: #b0b0b0 !important;
 }
