@@ -1,6 +1,9 @@
-/* Dark Theme CSS */
+/* ============================================
+   COMPREHENSIVE DARK THEME CSS
+   Complete styling for all components
+   ============================================ */
 
-/* Apply dark theme when body has dark-mode class */
+/* BASE DARK MODE */
 body.dark-mode {
     background-color: #1a1a1a !important;
     color: #e0e0e0 !important;
@@ -358,3 +361,357 @@ body.dark-mode {
 .dark-mode .footer-content {
     color: #b0b0b0 !important;
 }
+
+/* ============================================
+   TASKS PAGE - ALL COMPONENTS
+   ============================================ */
+.dark-mode .tasks-page {
+    background-color: #1a1a1a;
+}
+
+.dark-mode .page-header {
+    border-color: #444;
+}
+
+.dark-mode .page-header h1 {
+    color: #e0e0e0;
+}
+
+.dark-mode .page-subtitle {
+    color: #b0b0b0;
+}
+
+.dark-mode .tasks-grid {
+    background-color: #1a1a1a;
+}
+
+.dark-mode .task-card {
+    background-color: #2d2d2d !important;
+    border-color: #444 !important;
+    color: #e0e0e0;
+}
+
+.dark-mode .task-card:hover {
+    background-color: #353535 !important;
+    border-color: #555 !important;
+}
+
+.dark-mode .task-card-header {
+    color: #e0e0e0;
+}
+
+.dark-mode .task-title {
+    color: #4da8ff !important;
+}
+
+.dark-mode .task-description {
+    color: #b0b0b0 !important;
+}
+
+.dark-mode .task-meta {
+    color: #999 !important;
+}
+
+.dark-mode .task-author {
+    color: #b0b0b0;
+}
+
+.dark-mode .task-date {
+    color: #999;
+}
+
+.dark-mode .task-actions {
+    color: #e0e0e0;
+}
+
+/* ============================================
+   BADGES - Priority and Status
+   ============================================ */
+.dark-mode .priority-badge {
+    color: #fff !important;
+    background-color: #666 !important;
+}
+
+.dark-mode .priority-high {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+.dark-mode .priority-medium {
+    background-color: #ffc107 !important;
+    color: #1a1a1a !important;
+}
+
+.dark-mode .priority-low {
+    background-color: #28a745 !important;
+    color: #fff !important;
+}
+
+.dark-mode .status-badge {
+    color: #fff !important;
+    background-color: #666 !important;
+}
+
+.dark-mode .status-pending {
+    background-color: #ffc107 !important;
+    color: #1a1a1a !important;
+}
+
+.dark-mode .status-in-progress {
+    background-color: #0056b3 !important;
+    color: #fff !important;
+}
+
+.dark-mode .status-done {
+    background-color: #28a745 !important;
+    color: #fff !important;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+.dark-mode .empty-state {
+    background-color: #2d2d2d !important;
+    border-color: #444 !important;
+}
+
+.dark-mode .empty-state h3 {
+    color: #e0e0e0;
+}
+
+.dark-mode .empty-state p {
+    color: #b0b0b0;
+}
+
+.dark-mode .empty-state svg {
+    color: #666;
+    fill: #666;
+}
+
+/* ============================================
+   FEATURE CARDS
+   ============================================ */
+.dark-mode .feature-card {
+    background-color: #2d2d2d !important;
+    border-color: #444 !important;
+}
+
+.dark-mode .feature-card h3 {
+    color: #e0e0e0;
+}
+
+.dark-mode .feature-card p {
+    color: #b0b0b0;
+}
+
+/* ============================================
+   BUTTONS - All Types
+   ============================================ */
+.dark-mode .btn-sm {
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .btn-edit {
+    background-color: #0056b3 !important;
+    border-color: #0056b3 !important;
+    color: #fff !important;
+}
+
+.dark-mode .btn-edit:hover {
+    background-color: #0045a0 !important;
+}
+
+.dark-mode .btn-delete {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+.dark-mode .btn-delete:hover {
+    background-color: #c82333 !important;
+}
+
+/* ============================================
+   SVG ICONS - Light them up in dark mode
+   ============================================ */
+.dark-mode svg {
+    fill: #e0e0e0 !important;
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .btn svg {
+    fill: currentColor !important;
+}
+
+.dark-mode .task-card svg {
+    fill: #b0b0b0 !important;
+}
+
+.dark-mode .page-header svg {
+    fill: #e0e0e0 !important;
+}
+
+/* ============================================
+   TOASTS & ALERTS
+   ============================================ */
+.dark-mode .toast {
+    background-color: #2d2d2d !important;
+    border-color: #444 !important;
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .toast-success {
+    background-color: #28a745 !important;
+    color: #fff !important;
+}
+
+.dark-mode .toast-error {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+/* ============================================
+   CREATE/EDIT FORMS
+   ============================================ */
+.dark-mode .form-text {
+    color: #b0b0b0 !important;
+}
+
+.dark-mode .error-message {
+    color: #ff6b6b !important;
+}
+
+.dark-mode .form-group {
+    color: #e0e0e0;
+}
+
+/* ============================================
+   USERS PAGE
+   ============================================ */
+.dark-mode .users-page {
+    background-color: #1a1a1a;
+}
+
+.dark-mode .user-card {
+    background-color: #2d2d2d !important;
+    border-color: #444 !important;
+}
+
+.dark-mode .user-name {
+    color: #4da8ff !important;
+}
+
+.dark-mode .user-role {
+    color: #b0b0b0;
+}
+
+/* ============================================
+   FORM PAGE & CARDS (Edit/Create Pages)
+   ============================================ */
+.dark-mode .form-page {
+    background-color: #1a1a1a;
+}
+
+.dark-mode .form-card {
+    background-color: #2d2d2d !important;
+    border-color: #444 !important;
+    color: #e0e0e0;
+}
+
+.dark-mode .form-card-header {
+    color: #e0e0e0;
+}
+
+.dark-mode .form-card-header h1 {
+    color: #e0e0e0;
+}
+
+.dark-mode .form-card-header h1 svg {
+    fill: #4da8ff !important;
+    color: #4da8ff !important;
+}
+
+.dark-mode .form-card-header p {
+    color: #b0b0b0 !important;
+}
+
+.dark-mode .form-label {
+    color: #b0b0b0 !important;
+}
+
+.dark-mode .form-input {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .form-input:focus {
+    border-color: #4da8ff !important;
+    box-shadow: 0 0 0 3px rgba(77, 168, 255, 0.15) !important;
+}
+
+.dark-mode .form-input::placeholder {
+    color: #666 !important;
+}
+
+.dark-mode .form-textarea {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .form-textarea:focus {
+    border-color: #4da8ff !important;
+    box-shadow: 0 0 0 3px rgba(77, 168, 255, 0.15) !important;
+}
+
+.dark-mode select.form-input {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .form-input.input-error {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15) !important;
+}
+
+.dark-mode .form-input.input-success {
+    border-color: #51cf66 !important;
+    box-shadow: 0 0 0 3px rgba(81, 207, 102, 0.15) !important;
+}
+
+.dark-mode .validation-summary {
+    background-color: rgba(255, 107, 107, 0.1) !important;
+    border-color: rgba(255, 107, 107, 0.3) !important;
+    color: #ff6b6b !important;
+}
+
+.dark-mode .field-validation {
+    color: #ff6b6b !important;
+}
+
+.dark-mode .form-actions {
+    margin-top: 1.5rem;
+}
+
+.dark-mode .form-actions .btn-secondary {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+    color: #b0b0b0 !important;
+}
+
+.dark-mode .form-actions .btn-secondary:hover {
+    background-color: #2d2d2d !important;
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .form-actions .btn-primary {
+    background-color: #4da8ff !important;
+    color: #fff !important;
+}
+
+.dark-mode .form-actions .btn-primary svg {
+    fill: #fff !important;
+}
+
