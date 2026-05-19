@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dark.css" asp-append-version="true" />
 </head>
 <body>
     <nav class="navbar" style="border-bottom: 1px solid #ddd; padding: 1rem;">
@@ -17,6 +18,7 @@
                 TaskBoard
             </a>
             <div class="nav-links" style="display: flex; gap: 1rem; align-items: center;">
+                <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Theme">🌙</button>
                 @if (User.Identity != null && User.Identity.IsAuthenticated)
                 {
                     <a asp-controller="Home" asp-action="Index" class="nav-link" style="text-decoration: none; color: #555;">Home</a>
@@ -55,6 +57,7 @@
         </div>
     </footer>
 
+    <script src="~/js/theme.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
