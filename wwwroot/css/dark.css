@@ -45,6 +45,10 @@ body.dark-mode {
     color: #fff !important;
 }
 
+.dark-mode .nav-link-admin {
+    color: #4da8ff !important;
+}
+
 .dark-mode .nav-username {
     color: #e0e0e0 !important;
 }
