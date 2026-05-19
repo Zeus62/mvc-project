@@ -9,37 +9,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dark.css" asp-append-version="true" />
 </head>
 <body>
-    <nav class="navbar" style="border-bottom: 1px solid #ddd; padding: 1rem;">
-        <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a class="nav-brand" asp-controller="Home" asp-action="Index" style="font-weight: bold; font-size: 1.2rem; text-decoration: none; color: #333;">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="nav-brand" asp-controller="Home" asp-action="Index">
                 TaskBoard
             </a>
-            <div class="nav-links" style="display: flex; gap: 1rem; align-items: center;">
+            <div class="nav-links">
+                <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Theme">🌙</button>
                 @if (User.Identity != null && User.Identity.IsAuthenticated)
                 {
-                    <a asp-controller="Home" asp-action="Index" class="nav-link" style="text-decoration: none; color: #555;">Home</a>
-                    <a asp-controller="Tasks" asp-action="Index" class="nav-link" style="text-decoration: none; color: #555;">Tasks</a>
+                    <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                    <a asp-controller="Tasks" asp-action="Index" class="nav-link">Tasks</a>
                     @if (User.IsInRole("Admin"))
                     {
-                        <a asp-controller="Users" asp-action="Index" class="nav-link" style="text-decoration: none; color: #0056b3; font-weight: bold;">Manage Users</a>
+                        <a asp-controller="Users" asp-action="Index" class="nav-link nav-link-admin">Manage Users</a>
                     }
-                    <div class="nav-user" style="display: flex; gap: 1rem; align-items: center; margin-left: 1rem;">
-                        <span class="nav-username" style="font-weight: 500; color: #333;">
+                    <div class="nav-user">
+                        <span class="nav-username">
                             @User.Identity?.Name
                             @if (User.IsInRole("Admin"))
                             {
-                                <span class="nav-role-badge" style="font-size: 0.8rem; background: #eee; padding: 0.2rem 0.5rem; border-radius: 4px;">Admin</span>
+                                <span class="nav-role-badge">Admin</span>
                             }
                         </span>
-                        <a asp-controller="Account" asp-action="Logout" class="btn btn-outline" style="text-decoration: none; padding: 0.3rem 0.6rem; border: 1px solid #ccc; border-radius: 4px; color: #333;">Logout</a>
+                        <a asp-controller="Account" asp-action="Logout" class="btn btn-sm btn-outline">Logout</a>
                     </div>
                 }
                 else
                 {
-                    <a asp-controller="Account" asp-action="Login" class="btn btn-outline" style="text-decoration: none; padding: 0.3rem 0.6rem; border: 1px solid #ccc; border-radius: 4px; color: #333;">Sign In</a>
-                    <a asp-controller="Account" asp-action="Register" class="btn btn-primary" style="text-decoration: none; padding: 0.3rem 0.6rem; border: 1px solid #007bff; background: #007bff; color: #fff; border-radius: 4px;">Register</a>
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-sm btn-outline">Sign In</a>
+                    <a asp-controller="Account" asp-action="Register" class="btn btn-sm btn-primary">Register</a>
                 }
             </div>
         </div>
@@ -55,6 +57,7 @@
         </div>
     </footer>
 
+    <script src="~/js/theme.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

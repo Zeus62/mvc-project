@@ -76,6 +76,7 @@ a:hover { color: var(--primary-hover); }
     transition: all var(--transition);
 }
 .nav-link:hover { color: var(--text) !important; background: var(--bg-card); }
+.nav-link-admin { color: var(--primary) !important; font-weight: 600; }
 .nav-user {
     display: flex;
     align-items: center;
